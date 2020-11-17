@@ -19,6 +19,8 @@ class SubscriptionController extends Controller
         $subscription->save();
         DB::commit();
 
-        return response()->json($subscription);
+        return response()->json([
+            'data' => $subscription
+        ]);
     }
 }
