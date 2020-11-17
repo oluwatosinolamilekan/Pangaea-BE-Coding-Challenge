@@ -18,11 +18,11 @@ class EventController extends Controller
         $event->subscription_id = $subscription->id;
         $event->message = $request->message;
         $event->save();
-        
+
         DB::commit();
 
         return response()->json([
-            'topic' => $subscription
+            'topic' => $subscription->name
             'data' => $event
         ]);
     }
